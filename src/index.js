@@ -74,7 +74,10 @@ function pushValueToQueue (value) {
 };
 
 function setup() {
-    createCanvas(400, 700);
+    let mainContainer = createDiv()
+    let cnv = createCanvas(400, 700);
+    mainContainer.child(cnv);
+    // cnv.parent('mainCanvas');
     background(0);
 
     push();
@@ -86,9 +89,19 @@ function setup() {
     rect(250, 0, 250, 700);
     pop();
     button = createButton('push');
+    button.id('push')
     button2 = createButton('pop');
+    button2.id('pop')
     button3 = createButton('top');
+    button3.id('top')
     button4 = createButton('clear');
+    button4.id('clear')
+    mainContainer.child(button);
+    mainContainer.child(button2);
+    mainContainer.child(button3);
+    mainContainer.child(button4);
+
+
     push_address();
 }
 

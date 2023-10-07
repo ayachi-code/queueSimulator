@@ -18,3 +18,8 @@ h4 {
     border-radius: 20px;
     border-style: solid;
 }
+
+
+#push {
+    border-radius: none;
+};
