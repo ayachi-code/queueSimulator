@@ -1,5 +1,7 @@
 body {
     background-color: rgb(9, 8, 8);
+    display: flex;
+    
 }
 
 h1 {
@@ -19,7 +21,14 @@ h4 {
     border-style: solid;
 }
 
+div.mainCanvas {
+    display: flex;
+    align-items: center;
+}
 
-#push {
-    border-radius: none;
+button {
+    background-color: #00FF00;
+    width: 100px;
+    height: 50px;
+    display:inline-block;
 };
