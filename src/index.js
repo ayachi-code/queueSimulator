@@ -45,9 +45,8 @@ function setup() {
     button = createButton('push');
     button2 = createButton('pop');
     button3 = createButton('top');
+    button4 = createButton('clear');
 }
-
-
 
 function pushValueToQueue (value) {
         if (usedMoves.length == 0) {
@@ -108,7 +107,6 @@ function popFront () {
     pop();
     usedMoves.pop();
     elements.pop();
-
 };
 
 
@@ -119,6 +117,17 @@ function draw () {
     button3.mousePressed(() => {
         alert("Top of the stack is: " + elements[elements.length-1]);
     })
+    button4.mousePressed(() => {
+        elements = [];
+        usedMoves = [];
+        push();
+        strokeWeight(5);
+        stroke(255);
+        fill(255);
+        rect(0, 100, 999, 100);
+        pop();
+        
+    });
     // pop();
     // push(); 
     // textSize(30);
