@@ -77,7 +77,6 @@ function popFront () {
 function pushValueToQueue (value) {
         if (usedMoves.length == 0) {
             push();
-            // noStroke();
             fill(randomIntFromInterval(0,255),randomIntFromInterval(0,255),randomIntFromInterval(0,255));
             rect(0, 600, 250, 100);   
             pop();
@@ -94,7 +93,6 @@ function pushValueToQueue (value) {
             return;
         }
         push();
-        // noStroke();
         fill(randomIntFromInterval(0,255),randomIntFromInterval(0,255),randomIntFromInterval(0,255));
         rect(0, usedMoves[usedMoves.length-1], 250, 100);   
         pop();
@@ -129,9 +127,9 @@ function setup() {
 function draw () {
     button.mousePressed(pushValueToQueue);
     button2.mousePressed(popFront)
-    // button3.mousePressed(() => {
-    //     alert("Top of the stack is: " + elements[elements.length-1]);
-    // })
+    button3.mousePressed(() => {
+        alert("Top of the stack is: " + elements[elements.length-1]);
+    })
     // button4.mousePressed(() => {
     //     elements = [];
     //     usedMoves = [];
