@@ -1,14 +1,18 @@
 let button;
 let button2;
+let button3;
+let button4;
+
 let inp;
 
 let usedMoves = [];
+let elements = [];
 
 function randomIntFromInterval(min, max) { 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
   
-class Queue {
+class Stack {
     constructor(size) {
         this.data = [];
         this.size = size;
@@ -29,40 +33,37 @@ class Queue {
 
 
 function setup() {
-    createCanvas(1000,1000)
-    background(0)
+    createCanvas(1000, 200);
+    background(0);
+
     push();
     strokeWeight(5);
     stroke(255);
-    rect(0, 100, 999, 100)
+    rect(0, 100, 999, 100);
     pop();
-    let queue = new Queue(5);
-    queue.pushFront(23);
-    queue.pushFront(11);
-    queue.pushFront(44);
-    queue.pushFront(55);
 
     button = createButton('push');
     button2 = createButton('pop');
-    // inp.position(0, 0);
-    // inp.size(100);
+    button3 = createButton('top');
+}
 
-};
+
 
 function pushValueToQueue (value) {
         if (usedMoves.length == 0) {
             push();
             strokeWeight(5);
             stroke(55);
-            fill(0,100,200);
+            fill(randomIntFromInterval(0,255),randomIntFromInterval(0,255),randomIntFromInterval(0,255));
             rect(0, 100, 100, 100);   
             pop();
             usedMoves.push(100);
-            push(); 
+            elements.push();
             textSize(30);
-            text(randomIntFromInterval(1,100),6,160);
+            let randomInteger = randomIntFromInterval(1,100);
+            text(randomInteger,6,160);
+            elements.push(randomInteger);
             fill(0);
-            pop();
             return;
         } else if (usedMoves.length == 10) {
             alert("queue is full!")
@@ -71,15 +72,17 @@ function pushValueToQueue (value) {
         push();
         strokeWeight(5);
         stroke(55);
-        fill(0,100,200);
+        fill(randomIntFromInterval(0,255),randomIntFromInterval(0,255),randomIntFromInterval(0,255));
         rect(usedMoves[usedMoves.length-1], 100, 100, 100);   
         pop();
         push(); 
         textSize(30);
-        text(randomIntFromInterval(1,100),6+usedMoves[usedMoves.length-1],160);
+        let randomInteger = randomIntFromInterval(1,100);
+        text(randomInteger,6+usedMoves[usedMoves.length-1],160);
         fill(0);
         pop();
         usedMoves.push(usedMoves[usedMoves.length-1]+100);
+        elements.push(randomInteger);
         
 };
 
@@ -89,30 +92,33 @@ function popFront () {
         push();
         strokeWeight(5);
         stroke(255);
+        fill(255,255,255);
         rect(0, 100, 100, 100)
         pop();
         usedMoves.pop();
+        elements.pop();
         return;
     };
     push();
     strokeWeight(5);
+    fill(255,255,255);
     stroke(255);
     console.log(usedMoves[usedMoves.length-1]);
     rect(usedMoves[usedMoves.length-1]-100, 100, 100, 100)
     pop();
     usedMoves.pop();
+    elements.pop();
+
 };
 
 
 function draw () {
-    push();
-    textSize(32);
-    text('Queue Simulator...', 468, 30);
-    fill(0, 102, 153);
-    pop();
     // pushValueToQueue(33);
     button.mousePressed(pushValueToQueue);
     button2.mousePressed(popFront)
+    button3.mousePressed(() => {
+        alert("Top of the stack is: " + elements[elements.length-1]);
+    })
     // pop();
     // push(); 
     // textSize(30);
