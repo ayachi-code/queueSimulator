@@ -12,42 +12,6 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
   
-// class Stack {
-//     constructor(size) {
-//         this.data = [];
-//         this.size = size;
-//     };
-//     pushFront (value) {
-//         this.data.push(value);
-//     };
-//     popFront () {
-//         this.data.shift();
-//     };
-//     front () {
-//         return this.data[0];
-//     }
-//     back () {
-//         return this.data[this.data.length - 1]
-//     }
-// };
-
-
-// function setup() {
-//     createCanvas(1000, 200);
-//     background(0);
-
-//     push();
-//     strokeWeight(5);
-//     stroke(255);
-//     rect(0, 100, 999, 100);
-//     pop();
-
-//     button = createButton('push');
-//     button2 = createButton('pop');
-//     button3 = createButton('top');
-//     button4 = createButton('clear');
-// }
-
 function popFront () {
     if (usedMoves == 0) {
         alert("Stack is empty ;) There is nothing to pop lol ");
@@ -128,6 +92,10 @@ function draw () {
     button.mousePressed(pushValueToQueue);
     button2.mousePressed(popFront)
     button3.mousePressed(() => {
+        if (usedMoves.length == 0) {
+            alert("Stack is empty :/");
+            return;
+        } 
         alert("Top of the stack is: " + elements[elements.length-1]);
     })
     button4.mousePressed(() => {
