@@ -130,16 +130,15 @@ function draw () {
     button3.mousePressed(() => {
         alert("Top of the stack is: " + elements[elements.length-1]);
     })
-    // button4.mousePressed(() => {
-    //     elements = [];
-    //     usedMoves = [];
-    //     push();
-    //     strokeWeight(5);
-    //     stroke(255);
-    //     fill(255);
-    //     rect(0, 100, 999, 100);
-    //     pop();
-    // });
+    button4.mousePressed(() => {
+        elements = [];
+        usedMoves = [];
+        push();
+        stroke(100);
+        fill(255);
+        rect(0, 0, 250, 700);
+        pop();
+    });
 };
 
 
