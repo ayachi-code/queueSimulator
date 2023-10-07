@@ -65,7 +65,7 @@ function pushValueToQueue (value) {
             fill(0);
             return;
         } else if (usedMoves.length == 10) {
-            alert("queue is full!")
+            alert("Stack is full!")
             return;
         }
         push();
@@ -86,6 +86,10 @@ function pushValueToQueue (value) {
 };
 
 function popFront () {
+    if (usedMoves == 0) {
+        alert("Stack is empty ;) There is nothing to pop lol ");
+        return;
+    };
     console.log(usedMoves);
     if (usedMoves.length == 1) {
         push();
@@ -109,7 +113,6 @@ function popFront () {
     elements.pop();
 };
 
-
 function draw () {
     button.mousePressed(pushValueToQueue);
     button2.mousePressed(popFront)
@@ -125,6 +128,5 @@ function draw () {
         fill(255);
         rect(0, 100, 999, 100);
         pop();
-        
     });
 };
