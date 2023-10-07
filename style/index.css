@@ -31,4 +31,11 @@ button {
     width: 100px;
     height: 50px;
     display:inline-block;
-};
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button:hover {
+    background-color: salmon;
+    color: navy;
+}
