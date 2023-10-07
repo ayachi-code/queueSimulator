@@ -12,3 +12,9 @@ h4 {
     color: #f5f5dc;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.info {
+    border-color: white;
+    border-radius: 20px;
+    border-style: solid;
+}
