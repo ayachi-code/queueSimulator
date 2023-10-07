@@ -111,7 +111,6 @@ function popFront () {
 
 
 function draw () {
-    // pushValueToQueue(33);
     button.mousePressed(pushValueToQueue);
     button2.mousePressed(popFront)
     button3.mousePressed(() => {
@@ -128,11 +127,4 @@ function draw () {
         pop();
         
     });
-    // pop();
-    // push(); 
-    // textSize(30);
-    // text("20",6,160);
-    // fill(0);
-    // pop();
-
 };
