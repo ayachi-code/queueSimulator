@@ -1,0 +1,112 @@
+
+
+StappenPlan
+1. orrientieren met classes ***
+    1. classes gebruiken
+        1. Maze
+            1. generate  (Generate op manier van video!!!!!!!!)
+            2. print
+            3. findPath
+            4. Cell Class
+                1. States bijhouden van de structuur van de cell
+            5. Constructor
+                5. Basic maze layout maken zie afbeelding 3
+
+    2. matrix gebruiken voor maze
+2. afbeelding 3 namaken *
+3. generate functie implementeren aan de hand van de video   afbeelding 2 **
+4. findPath Copy paste *
+5. print Maze loop verdelen ****
+6. inleveren *
+
+
+
+    afbeelding 2
+    generate 1 tussen 2
+    +---+---+---+
+    | 1 | 8   9 |     Vector of pairs (Coordinate,Coordinate) (2,3) (3,4) (4,5) (5,6) (6,7) (7,8) (8,9)
+    +   +   +---+
+    | 2 | 7   6 |     
+    +   +---+   +
+    | 3   4   5 |     
+    +---+---+---+
+
+
+x x x x
+x x x x
+x x x x
+x x x x
+
+afbeelding 3
+    +---+---+---+
+    |   |   |   |     
+    +---+---+---+
+    |   |   |   |     
+    +---+---+---+
+    |   |   |   |     
+    +---+---+---+
+
+1.setLeftWall(false)
+
+   char 
+
+
+Before
+vector {
+   [0] vectorr {0,0,0},
+           {0,0,0},
+           {0,0,0}
+}
+
+First i itteration
+vector {
+   [0] vectorr {Cell,Cell,Cell},
+           {0,0,0},
+           {0,0,0}
+}
+
+
+Finally
+
+vector {
+   [0] vectorr {Cell, Cell, Cell},
+            {Cell, Cell, Cell}
+            {Cell, Cell, Cell}
+}
+
+vector {
+   [0] vectorr {},
+           {},
+           {}
+}
+
+
+
+vector.at(0).at(0) = waarde;
+
+
+x x x x
+x x x x
+x x x x
+x x x x
+
+
+
+
+./maze 5 4
+
+
+Random(time(0)); //Geeft random 1 23 4 4 4
+
+
+
+Random(6)
+
+   seed Example 
+    +---+---+---+
+    | 1 |   |   |     
+    +---+---+---+
+    | 2 | 7 | 6 |     
+    +---+---+---+
+    | 3 | 4 | 5 |     
+    +---+---+---+

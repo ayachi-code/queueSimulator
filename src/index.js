@@ -8,6 +8,9 @@ let inp;
 let usedMoves = [];
 let elements = [];
 
+let addressRange = 1028;
+
+
 function randomIntFromInterval(min, max) { 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
@@ -86,6 +89,28 @@ function setup() {
     button2 = createButton('pop');
     button3 = createButton('top');
     button4 = createButton('clear');
+    push_address();
+}
+
+function push_address() {
+    let prefix = "0x";
+    let addressRange = 1028;
+
+    for (let i = 0; i < 7; i++) {
+        let address = prefix + addressRange;
+        push();
+        fill(18,221,105);
+        rect(250, 600-(i*100), 150, 100);   
+        pop();
+        push(); 
+        textSize(30);
+        console.log(address);
+        text(address,280,660-(i*100));
+        fill(0);
+        pop();
+        addressRange -= 4;
+        address = "";
+    }
 }
 
 function draw () {
