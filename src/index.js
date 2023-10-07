@@ -48,40 +48,36 @@ function randomIntFromInterval(min, max) {
 //     button4 = createButton('clear');
 // }
 
-// function popFront () {
-//     if (usedMoves == 0) {
-//         alert("Stack is empty ;) There is nothing to pop lol ");
-//         return;
-//     };
-//     console.log(usedMoves);
-//     if (usedMoves.length == 1) {
-//         push();
-//         strokeWeight(5);
-//         stroke(255);
-//         fill(255,255,255);
-//         rect(0, 100, 100, 100)
-//         pop();
-//         usedMoves.pop();
-//         elements.pop();
-//         return;
-//     };
-//     push();
-//     strokeWeight(5);
-//     fill(255,255,255);
-//     stroke(255);
-//     console.log(usedMoves[usedMoves.length-1]);
-//     rect(usedMoves[usedMoves.length-1]-100, 100, 100, 100)
-//     pop();
-//     usedMoves.pop();
-//     elements.pop();
-// };
+function popFront () {
+    if (usedMoves == 0) {
+        alert("Stack is empty ;) There is nothing to pop lol ");
+        return;
+    };
+    if (usedMoves.length == 1) {
+        push();
+        noStroke();
+        fill(255,255,255);
+        rect(0, 599, 250, 100);   
+        pop();
+        usedMoves.pop();
+        elements.pop();
+        return;
+    };
+    console.log( usedMoves);
+    push();
+    noStroke();
+    fill(255,255,255);
+    rect(0, usedMoves[usedMoves.length-1]+99, 250, 100)
+    pop();
+    usedMoves.pop();
+    elements.pop();
+};
 
 
 function pushValueToQueue (value) {
         if (usedMoves.length == 0) {
             push();
-            strokeWeight(5);
-            stroke(55);
+            // noStroke();
             fill(randomIntFromInterval(0,255),randomIntFromInterval(0,255),randomIntFromInterval(0,255));
             rect(0, 600, 250, 100);   
             pop();
@@ -98,8 +94,7 @@ function pushValueToQueue (value) {
             return;
         }
         push();
-        strokeWeight(5);
-        stroke(55);
+        // noStroke();
         fill(randomIntFromInterval(0,255),randomIntFromInterval(0,255),randomIntFromInterval(0,255));
         rect(0, usedMoves[usedMoves.length-1], 250, 100);   
         pop();
@@ -111,7 +106,6 @@ function pushValueToQueue (value) {
         pop();
         usedMoves.push(usedMoves[usedMoves.length-1]-100);
         elements.push(randomInteger);
-        
 };
 
 function setup() {
@@ -134,7 +128,7 @@ function setup() {
 
 function draw () {
     button.mousePressed(pushValueToQueue);
-    // button2.mousePressed(popFront)
+    button2.mousePressed(popFront)
     // button3.mousePressed(() => {
     //     alert("Top of the stack is: " + elements[elements.length-1]);
     // })
