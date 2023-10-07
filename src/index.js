@@ -89,7 +89,7 @@ function pushValueToQueue (value) {
             elements.push(randomInteger);
             fill(0);
             return;
-        } else if (usedMoves.length == 10) {
+        } else if (usedMoves.length == 7) {
             alert("Stack is full!")
             return;
         }
